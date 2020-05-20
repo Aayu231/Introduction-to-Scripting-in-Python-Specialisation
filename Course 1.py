@@ -37,8 +37,7 @@ def is_valid_date(year, month, day):
         else:
             return False
     else:
-        return False
-            
+        return False  
 
 def days_between(year1, month1, day1, year2, month2, day2):
     """ how many days are between """
@@ -53,6 +52,7 @@ def days_between(year1, month1, day1, year2, month2, day2):
                 return 0
     else:
         return 0
+    
 def age_in_days(year, month, day):
     """ what is your age now """
     d_12 = str(datetime.date.today())
