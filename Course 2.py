@@ -26,10 +26,6 @@ def singleline_diff(line1, line2):
         else:
             return i_1 + 1
     return i_1
-#print( singleline_diff('', 'a'))
-
-
-
 
 def singleline_diff_format(line1, line2, idx):
     """
@@ -46,16 +42,11 @@ def singleline_diff_format(line1, line2, idx):
 
       If idx is not a valid index, then returns an empty string.
     """
-    
-
     if(idx < 0 or idx > min(len(line1), len(line2))):
         return ""
     else:
         return(line1 + "\n" + "=" * idx + "^" + "\n" + line2 + "\n")
         
-
-#print(singleline_diff_format('abc', 'abd', 2) )
-
 def multiline_diff(lines1, lines2):
     """
     Inputs:
@@ -83,12 +74,7 @@ def multiline_diff(lines1, lines2):
             if(ln_1 != ln_2):
                 i_7 = singleline_diff(ln_1, ln_2)
                 return(i_6, i_7)
-            i_6 += 1
-
-#print(multiline_diff(['a'], ['b']))
-#print(multiline_diff(['lines1', 'line2'], ['line1', 'line2']))
-#print(multiline_diff(['line1', 'line2'], ['line1', 'line2', 'line3']))
-            
+            i_6 += 1           
         
 def get_file_lines(filename):
     """
@@ -136,12 +122,3 @@ def file_diff_format(filename1, filename2):
 
     return("Line "+ str(li_ne) + ":" + '\n'
            + singleline_diff_format(f_1[li_ne], f_2[li_ne], pos_ition))
-
-    
-    
-            
-        
-            
-        
-
-
