@@ -135,9 +135,6 @@ def filter_by_year(statistics, year, yearid):
             by_year_list.append(eachdict)
     return by_year_list    
 
-#print(filter_by_year([{'year1': '1', 'year2': '2', 'year3': '3'}],1, 'year1'))
-
-
 def top_player_ids(info, statistics, formula, numplayers):
     """
     Inputs:
@@ -159,17 +156,6 @@ def top_player_ids(info, statistics, formula, numplayers):
     actual_list = sorted(players_list, key=lambda x: x[1], reverse=True)
     return actual_list[0:numplayers]
 
-#print(top_player_ids({'masterfile': '', 'battingfile': '', 'separator':
-#',', 'quote': '"', 'playerid': 'player', 'firstname': 'firstname', 
-#'lastname': 'lastname', 'yearid': 'year', 'atbats': 'atbats', 'hits': 
-#'hits', 'doubles': 'doubles', 'triples': 'triples', 'homeruns': 
-#'homers', 'walks': 'walks', 'battingfields': ['atbats', 'hits', 
-#'doubles', 'triples', 'homers', 'walks']},[{'player': 'player7', 
-#'homers': '10', 'doubles': '19', 'walks': '27', 'atbats': '500', 
-#'triples': '2', 'year': '2020', 'hits': '161'},{'player': 'player7', 
-#'homers': '30', 'doubles': '30', 'walks': '29', 'atbats': '501', 
-#'triples': '10', 'year': '2021', 'hits': '145'}],batting_average, 1))
-
 def lookup_player_names(info, top_ids_and_stats):
     """
     Inputs:
@@ -190,11 +176,6 @@ def lookup_player_names(info, top_ids_and_stats):
             if dit[info['playerid']] == ids[0]:
                 player_names.append('{0:.3f} --- {1} {2}'.format(ids[1], dit[info['firstname']], dit[info['lastname']]))
     return player_names
-#lookup_player_names({'masterfile': 'master1.csv', 'battingfile': '', 'separator': ',', 'quote': '"', 
-#'playerid': 'player', 'firstname': 'firstname', 'lastname': 'lastname', 'yearid': 'year', 
-#'atbats': 'atbats', 'hits': 'hits', 'doubles': 'doubles', 'triples': 'triples', 'homeruns': 'homers', 'walks': 'walks', 
-#'battingfields': ['atbats', 'hits', 'doubles', 'triples', 'homers', 'walks']},
-#[('player0', 0.1)])
 
 def compute_top_stats_year(info, formula, numplayers, year):
     """
@@ -241,7 +222,6 @@ def aggregate_by_player_id(statistics, playerid, fields):
             dicttostore[dit[playerid]][playerid] = dit[playerid]
 
     # Everything is set up, only addition of fields is due:
-    #print(d)
 
     for key, val in dicttostore.items():
         for dit in statistics:
